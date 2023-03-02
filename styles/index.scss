@@ -12,42 +12,60 @@ body {
 
 .navbar {
     background-color: #243763;
-    max-width: 100%;
+    overflow: hidden;
     min-height: 10vh;
     display: flex;
     align-items: center;
-    overflow: hidden;
 
-
-    a, i {
+    a {
         text-decoration: none;
         color: white;
-        padding: 15px;
-        height: 100%;
-    }
-}
+        min-height: 10vh;
+        padding: 5px 15px;
+        display: inline-flex;
+        place-items: center;
 
-.nav--burger {
-    justify-content: flex-end;
-
-    .home {
-        background-color: #FF6E31; 
     }
 
-    & a:hover, i:hover {
+    & a:hover {
         background-color: #f7a785;
-        cursor: pointer;
     }
 }
 
+.home,
+a.home:hover {
+    background-color: #FF6E31;
+    position: relative;   
+}
+
+a.nav--icon {
+    display: none;
+    position: absolute;
+}
+
+.fa-bars {
+    padding: 5px 15px;
+    min-height: 10vh;
+    display: inline-flex;
+    place-items: center;
+}
 
 /* responsive screen */
-@media screen and (max-width: 800px) {
-    .navbar a:not(:first-child) {
+@media screen and (max-width: 600px) {
+    .navbar a {
         display: none;
     }
 
-    .navbar a:last-child {
-        display: contents;
+    .navbar {
+        height: 10vh;
+        padding: 5px 0;
     }
-}
+    a.nav--icon {
+        display: inline-block;
+    
+        &:hover {
+        height: 10vh;
+        cursor: pointer;
+        }
+    }
+} 
