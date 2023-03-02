@@ -13,29 +13,35 @@ body {
 .navbar {
   background-color: #243763;
   max-width: 100%;
+  min-height: 10vh;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
-.navbar a {
+.navbar a, .navbar i {
   text-decoration: none;
   color: white;
-  display: block;
-  float: left;
   padding: 15px;
+  height: 100%;
 }
 
 .nav--burger {
-  display: flex;
   justify-content: flex-end;
 }
 .nav--burger .home {
   background-color: #FF6E31;
 }
-.nav--burger a:hover {
+.nav--burger a:hover, .nav--burger i:hover {
   background-color: #f7a785;
+  cursor: pointer;
 }
 
-.nav--icon {
-  display: none;
+/* responsive screen */
+@media screen and (max-width: 800px) {
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+  .navbar a:last-child {
+    display: contents;
+  }
 }/*# sourceMappingURL=index.css.map */

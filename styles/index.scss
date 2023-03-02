@@ -13,33 +13,41 @@ body {
 .navbar {
     background-color: #243763;
     max-width: 100%;
+    min-height: 10vh;
     display: flex;
     align-items: center;
     overflow: hidden;
 
 
-    a {
+    a, i {
         text-decoration: none;
         color: white;
-        display: block;
-        float: left;
         padding: 15px;
+        height: 100%;
     }
 }
 
 .nav--burger {
-    display: flex;
     justify-content: flex-end;
 
     .home {
         background-color: #FF6E31; 
     }
 
-    & a:hover {
+    & a:hover, i:hover {
         background-color: #f7a785;
+        cursor: pointer;
     }
 }
 
-.nav--icon {
-    display: none;
+
+/* responsive screen */
+@media screen and (max-width: 800px) {
+    .navbar a:not(:first-child) {
+        display: none;
+    }
+
+    .navbar a:last-child {
+        display: contents;
+    }
 }
