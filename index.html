@@ -9,12 +9,25 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="navbar nav--burger" id="nav-bar">
-        <a href="" class="home">Home</a>
+    <div class="topnav" id="myTopnav">
+        <a href="" class="active">Home</a>
         <a href="">About Us</a>
         <a href="">Gallery</a>
         <a href="">Contact Us</a>
-        <a class="nav--icon" onclick="burgerMenu()"><i class="fa-solid fa-bars"></i></a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa-solid fa-bars"></i>
+        </a>
     </div>
+
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+    </script>
 </body>
 </html>
